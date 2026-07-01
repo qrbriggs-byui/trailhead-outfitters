@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trailhead Outfitters - Design Documents</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            color-scheme: light;
+            --ink: #24302a;
+            --muted: #5f6f66;
+            --line: #d8e0d9;
+            --paper: #ffffff;
+            --field: #f6f8f5;
+            --accent: #2f6f4e;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            color: var(--ink);
+            background: #eef3ed;
+            font-family: "Roboto", Arial, Helvetica, sans-serif;
+            line-height: 1.6;
+        }
+
+        header,
+        main {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 1rem;
+        }
+
+        header {
+            padding-top: 2rem;
+        }
+
+        h1,
+        h2,
+        h3 {
+            line-height: 1.2;
+        }
+
+        h1 {
+            margin-bottom: 0.25rem;
+        }
+
+        h2 {
+            margin-top: 0;
+            border-bottom: 2px solid var(--line);
+            padding-bottom: 0.35rem;
+        }
+
+        section {
+            background: var(--paper);
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            margin: 1rem 0;
+            padding: 1rem;
+        }
+
+        .note {
+            color: var(--muted);
+            margin-top: 0;
+        }
+
+        .fill-in {
+            min-height: 3rem;
+            background: var(--field);
+            border: 1px dashed var(--line);
+            border-radius: 6px;
+            padding: 0.75rem;
+        }
+
+        .grid {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .two-column {
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 0.75rem;
+        }
+
+        th,
+        td {
+            border: 1px solid var(--line);
+            padding: 0.6rem;
+            text-align: left;
+            vertical-align: top;
+        }
+
+        th {
+            background: var(--field);
+        }
+
+        ul {
+            padding-left: 1.25rem;
+        }
+
+        .wireframe-box {
+            min-height: 220px;
+            border: 2px dashed var(--accent);
+            border-radius: 8px;
+            background:
+                linear-gradient(var(--field), var(--field)) 1rem 1rem / calc(100% - 2rem) 2.5rem no-repeat,
+                linear-gradient(var(--field), var(--field)) 1rem 4.5rem / calc(100% - 2rem) 5rem no-repeat,
+                linear-gradient(var(--field), var(--field)) 1rem 10.5rem / calc(100% - 2rem) 6rem no-repeat;
+            padding: 1rem;
+        }
+
+        .wireframe-image {
+            display: block;
+            width: 100%;
+            height: auto;
+            border: 2px solid var(--accent);
+            border-radius: 8px;
+        }
+
+        .label {
+            display: inline-block;
+            color: var(--accent);
+            font-weight: 700;
+            margin-bottom: 0.35rem;
+        }
+
+        .swatch {
+            display: inline-block;
+            width: 1.25rem;
+            height: 1.25rem;
+            border: 1px solid var(--line);
+            border-radius: 4px;
+            margin-right: 0.4rem;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Trailhead Outfitters Design Document</h1>
+    </header>
+
+    <main>
+        <section>
+            <h2>1. Project Overview</h2>
+            <p><strong>Project type:</strong> Storefront</p>
+            <p><strong>Project description:</strong></p>
+            <div class="fill-in">
+                Trailhead Outfitters is an online storefront for hiking and camping gear. Users can browse products,
+                view product details, and complete an order form.
+            </div>
+            <p><strong>Primary goal:</strong></p>
+            <div class="fill-in">
+                Users should be able to purchase outdoor products easily and confidently, with clear product information and a simple order process.
+            </div>
+            <p><strong>Target audience:</strong></p>
+            <div class="fill-in">
+                Outdoor enthusiasts, hikers, and campers looking for quality gear and equipment.
+            </div>
+        </section>
+
+        <section>
+            <h2>2. Site Purpose and User Goals</h2>
+            <div class="grid two-column">
+                <div>
+                    <h3>Business Goals</h3>
+                    <ul>
+                        <li>Show outdoor products in a clear and inviting way.</li>
+                        <li>Help users find product information before ordering.</li>
+                        <li>Make the order process simple and easy to understand.</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>User Goals</h3>
+                    <ul>
+                        <li>Browse hiking and camping products.</li>
+                        <li>Compare names, prices, images, and descriptions.</li>
+                        <li>Place an order and see a confirmation message.</li>
+                    </ul>
+                </div>
+            </div>
+            <p><strong>Additional goals or notes:</strong></p>
+            <div class="fill-in">Keep track of the number of orders placed and date of last order.</div>
+        </section>
+
+        <section>
+            <h2>3. Content Plan</h2>
+            <p class="note">List the main content the storefront needs.</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Content Type</th>
+                        <th>What It Includes</th>
+                        <th>Notes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Hero image</td>
+                        <td>Wide image from <code>src/assets/trailhead-hero.png</code></td>
+                        <td class="fill-in">
+                            The home page hero uses a trailhead-themed image with one man and one woman hiker at the
+                            start of a forested trail. This helps visitors quickly understand the outdoor gear theme.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Product data</td>
+                        <td>At least 12 products from <code>products.json</code></td>
+                        <td class="fill-in">List planned categories, such as Camping, Hiking, Packs, Clothing, or Cooking.</td>
+                    </tr>
+                    <tr>
+                        <td>Product cards</td>
+                        <td>Image, name, and price</td>
+                        <td class="fill-in">Describe what makes a product card easy to scan.</td>
+                    </tr>
+                    <tr>
+                        <td>Product details</td>
+                        <td>Larger image, full description, price, and order button</td>
+                        <td class="fill-in">Describe what information helps the user decide.</td>
+                    </tr>
+                    <tr>
+                        <td>Order form</td>
+                        <td>Name, email, phone, address, and optional message</td>
+                        <td class="fill-in">Describe what the user should see after submitting the form.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section>
+            <h2>4. Typography</h2>
+            <p class="note">Choose fonts that are readable and fit an outdoor storefront.</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Text Use</th>
+                        <th>Font Choice</th>
+                        <th>Size / Weight</th>
+                        <th>Reason</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Headings</td>
+                        <td class="fill-in">Google Roboto</td>
+                        <td class="fill-in">32px for main headings, 24px for section headings, 700 weight</td>
+                        <td class="fill-in">Roboto is clean, readable, and works well for a modern storefront.</td>
+                    </tr>
+                    <tr>
+                        <td>Body text</td>
+                        <td class="fill-in">Google Roboto</td>
+                        <td class="fill-in">16px, 400 weight</td>
+                        <td class="fill-in">Roboto has clear letter shapes, which helps product descriptions and form text stay easy to read.</td>
+                    </tr>
+                    <tr>
+                        <td>Buttons and labels</td>
+                        <td class="fill-in">Google Roboto</td>
+                        <td class="fill-in">14px to 16px, 500 or 700 weight</td>
+                        <td class="fill-in">Using Roboto for buttons and labels keeps the interface consistent and simple.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section>
+            <h2>5. Color Palette</h2>
+            <p class="note">Choose colors with good contrast. Include hex codes so they can be used in CSS.</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Color Role</th>
+                        <th>Hex Code</th>
+                        <th>Where It Will Be Used</th>
+                        <th>Reason</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Primary color</td>
+                        <td class="fill-in"><span class="swatch" style="background-color: #588157;"></span>#588157</td>
+                        <td class="fill-in">Header accents, links, section highlights, and product card details</td>
+                        <td class="fill-in">A natural green that supports the hiking and camping theme.</td>
+                    </tr>
+                    <tr>
+                        <td>Secondary color</td>
+                        <td class="fill-in"><span class="swatch" style="background-color: #a3b18a;"></span>#a3b18a</td>
+                        <td class="fill-in">Hover states, supporting backgrounds, borders, and small accents</td>
+                        <td class="fill-in">A softer green that adds variety while still feeling outdoorsy.</td>
+                    </tr>
+                    <tr>
+                        <td>Background color</td>
+                        <td class="fill-in"><span class="swatch" style="background-color: #dad7cd;"></span>#dad7cd</td>
+                        <td class="fill-in">Page background, quiet content areas, and form backgrounds</td>
+                        <td class="fill-in">A warm neutral color that keeps the page light and readable.</td>
+                    </tr>
+                    <tr>
+                        <td>Text color</td>
+                        <td class="fill-in"><span class="swatch" style="background-color: #344e41;"></span>#344e41</td>
+                        <td class="fill-in">Headings, body text, labels, and footer text</td>
+                        <td class="fill-in">A dark green-gray that gives strong contrast on light backgrounds.</td>
+                    </tr>
+                    <tr>
+                        <td>Call-to-action color</td>
+                        <td class="fill-in"><span class="swatch" style="background-color: #3a5a40;"></span>#3a5a40</td>
+                        <td class="fill-in">Order Now button</td>
+                        <td class="fill-in">A deeper green that helps important actions stand out.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section>
+            <h2>6. Page Structure</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Page</th>
+                        <th>Purpose</th>
+                        <th>Main Elements</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Product Listing</td>
+                        <td>Show all products in a responsive grid.</td>
+                        <td class="fill-in">Header, navigation, loading message, product grid, product cards, order count message.</td>
+                    </tr>
+                    <tr>
+                        <td>Product Detail</td>
+                        <td>Show more information about one selected product.</td>
+                        <td class="fill-in">Large image, name, description, price, Order Now button.</td>
+                    </tr>
+                    <tr>
+                        <td>Order Form</td>
+                        <td>Collect customer order information.</td>
+                        <td class="fill-in">Selected product info, form fields, validation, confirmation message.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section>
+            <h2>7. Wireframes</h2>
+            <p class="note">Sketch or describe the layout for each screen size. You can replace these boxes with images of your sketches later.</p>
+            <div class="grid two-column">
+                <div>
+                    <span class="label">Mobile Product Listing</span>
+                    <img
+                        class="wireframe-image"
+                        src="src/assets/mobile-home.jpg"
+                        alt="Mobile home page wireframe for the Trailhead Outfitters product listing"
+                    >
+                    <p class="fill-in">Notes about mobile navigation, product card stacking, and spacing.</p>
+                </div>
+                <div>
+                    <span class="label">Desktop Product Listing</span>
+                    <img
+                        class="wireframe-image"
+                        src="src/assets/laptop-home.jpg"
+                        alt="Laptop home page wireframe for the Trailhead Outfitters product listing"
+                    >
+                    <p class="fill-in">Notes about grid columns, header layout, and product card behavior.</p>
+                </div>
+                <div>
+                    <span class="label">Home Page Hero Image</span>
+                    <img
+                        class="wireframe-image"
+                        src="src/assets/trailhead-hero.png"
+                        alt="Trailhead hero image showing one man and one woman hiker at the start of a forested trail"
+                    >
+                    <p class="fill-in">
+                        This image replaces the wireframe placeholder hero area. It should be used as the main
+                        background image near the top of the home page.
+                    </p>
+                </div>
+                <div>
+                    <span class="label">Product Detail Page</span>
+                    <div class="wireframe-box"></div>
+                    <p class="fill-in">Notes about image placement, product details, and Order Now button.</p>
+                </div>
+                <div>
+                    <span class="label">Order Form Page</span>
+                    <div class="wireframe-box"></div>
+                    <p class="fill-in">Notes about form layout, required fields, and confirmation message.</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>8. User Interaction Plan</h2>
+            <ul>
+                <li>Clicking a product card opens the product detail view using a URL parameter like <code>?id=tent01</code>.</li>
+                <li>Clicking <strong>Order Now</strong> opens the order form page for the selected product as a modal on the product detail page.</li>
+                <li>Submitting the form shows a confirmation message.</li>
+                <li>The order count is saved in <code>localStorage</code> and shown to the user.</li>
+                <li>Product cards include hover effects and smooth transitions.</li>
+            </ul>
+            <p><strong>Modal or dropdown plan:</strong></p>
+            <div class="fill-in">
+                Describe the required interactive UI component. For example, the mobile menu could use a dropdown.
+            </div>
+        </section>
+
+        <section>
+            <h2>9. Data and JavaScript Plan</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>File</th>
+                        <th>Responsibility</th>
+                        <th>Notes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>data.js</code></td>
+                        <td>Fetch product data from <code>products.json</code>.</td>
+                        <td class="fill-in">Include loading and error handling notes.</td>
+                    </tr>
+                    <tr>
+                        <td><code>render.js</code></td>
+                        <td>Render product cards, product details, messages, and form feedback.</td>
+                        <td class="fill-in"></td>
+                    </tr>
+                    <tr>
+                        <td><code>main.js</code></td>
+                        <td>Handle user events, URL parameters, navigation, form submission, and localStorage.</td>
+                        <td class="fill-in"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section>
+            <h2>10. Form Plan</h2>
+            <div class="grid two-column">
+                <div>
+                    <h3>Required Fields</h3>
+                    <ul>
+                        <li>Name</li>
+                        <li>Email</li>
+                        <li>Address</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Optional Fields</h3>
+                    <ul>
+                        <li>Phone</li>
+                        <li>Message</li>
+                    </ul>
+                </div>
+            </div>
+            <p><strong>Validation plan:</strong></p>
+            <div class="fill-in">
+                Explain how the form will check for required fields, valid email format, and correct phone input type.
+            </div>
+            <p><strong>After submission:</strong></p>
+            <div class="fill-in">
+                Explain how the confirmation message will appear and how the order count will update.
+            </div>
+        </section>
+
+        <section>
+            <h2>11. Accessibility Plan</h2>
+            <ul>
+                <li>Use semantic HTML elements such as <code>header</code>, <code>main</code>, <code>section</code>, and <code>nav</code>.</li>
+                <li>Add useful <code>alt</code> text for all product images.</li>
+                <li>Use readable color contrast for text, buttons, and links.</li>
+                <li>Make buttons and links clear and easy to select.</li>
+                <li>Make sure the site can be used with a keyboard.</li>
+                <li>Use labels for all form inputs.</li>
+            </ul>
+            <p><strong>Additional accessibility notes:</strong></p>
+            <div class="fill-in"></div>
+        </section>
+
+        <section>
+            <h2>12. Responsive Design Plan</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Screen Size</th>
+                        <th>Layout Plan</th>
+                        <th>Navigation Plan</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Mobile</td>
+                        <td class="fill-in">Single-column product cards and form fields.</td>
+                        <td class="fill-in">Hamburger menu.</td>
+                    </tr>
+                    <tr>
+                        <td>Tablet</td>
+                        <td class="fill-in">Two-column product grid if space allows.</td>
+                        <td class="fill-in"></td>
+                    </tr>
+                    <tr>
+                        <td>Desktop</td>
+                        <td class="fill-in">Multi-column product grid with wider detail layout.</td>
+                        <td class="fill-in">Full navigation menu.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section>
+            <h2>13. Testing Checklist</h2>
+            <ul>
+                <li>Product data loads from <code>products.json</code>.</li>
+                <li>A loading message appears while data is being fetched.</li>
+                <li>An error message appears if product data fails to load.</li>
+                <li>Product cards show image, name, and price.</li>
+                <li>Product detail page uses <code>URLSearchParams</code> to find the selected product.</li>
+                <li>Order form validates required fields.</li>
+                <li>Submitting the form updates the localStorage order count.</li>
+                <li>Layout works on mobile, tablet, and desktop.</li>
+                <li>Images have alt text and text contrast is readable.</li>
+            </ul>
+        </section>
+    </main>
+</body>
+</html>

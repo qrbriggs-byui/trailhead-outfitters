@@ -1,0 +1,342 @@
+/*
+  Trailhead Outfitters Home Page Styles
+  -------------------------------------
+  This page is intentionally written with simple HTML and CSS.
+  There is no JavaScript yet. Later, JavaScript can replace these
+  sample product cards with cards built from products.json.
+*/
+
+/*
+  The universal selector (*) applies to every element.
+  border-box makes width calculations easier because padding and
+  borders are included inside the element's width.
+*/
+* {
+  box-sizing: border-box;
+}
+
+/*
+  Base page styles:
+  - remove the default browser margin
+  - use the colors from the design document
+  - use common readable fonts
+*/
+body {
+  margin: 0;
+  color: #344e41;
+  background-color: #dad7cd;
+  font-family: Roboto, Arial, Helvetica, sans-serif;
+  line-height: 1.5;
+}
+
+/*
+  Images should not stretch wider than their container.
+  display: block removes small extra gaps under images.
+*/
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/*
+  Use the call-to-action color from the design document for links.
+*/
+a {
+  color: #3a5a40;
+}
+
+/*
+  Header area:
+  The wireframe shows the logo, site name, and tagline at the top.
+*/
+.site-header {
+  background-color: #ffffff;
+  border-bottom: 4px solid #588157;
+  padding: 16px;
+}
+
+/*
+  This wrapper keeps the header content from becoming too wide
+  on large screens.
+*/
+.brand {
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+/*
+  The logo has a fixed size so it stays neat beside the heading.
+*/
+.brand-logo {
+  width: 72px;
+  height: 72px;
+  border: 2px solid #b8c5ad;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+/*
+  Main page title.
+  The font size is adjusted again in the media query for small screens.
+*/
+.brand h1 {
+  margin: 0;
+  font-size: 48px;
+  line-height: 1.1;
+}
+
+.tagline {
+  margin-top: 6px;
+  margin-bottom: 0;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+/*
+  The main element holds the hero and product sections.
+  Like the header, it is centered and limited to a readable width.
+*/
+main {
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/*
+  Hero area:
+  The wireframe has one wide image area below the header.
+  This uses a trailhead photo-style image from the assets folder.
+*/
+.hero {
+  min-height: 250px;
+  padding: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #ffffff;
+  background-image:
+    linear-gradient(rgba(52, 78, 65, 0.72), rgba(52, 78, 65, 0.72)),
+    url("../src/assets/trailhead-hero.png");
+  background-position: center;
+  background-size: cover;
+}
+
+.hero h2 {
+  max-width: 720px;
+  margin: 0;
+  font-size: 52px;
+  line-height: 1.1;
+}
+
+/*
+  Product sections:
+  Both Featured Products and All Products use the same layout.
+*/
+.product-section {
+  padding: 32px 16px;
+  border-bottom: 2px solid #b8c5ad;
+}
+
+.product-section h2 {
+  margin-top: 0;
+  margin-bottom: 24px;
+  text-align: center;
+  font-size: 36px;
+}
+
+/*
+  Product grid:
+  The desktop wireframe shows five cards in each row.
+  The media queries below reduce the number of columns on smaller screens.
+*/
+.product-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  gap: 20px;
+}
+
+/*
+  Product cards:
+  These are placeholder cards for now. Later, each card can show
+  a real product image, name, description, and price from data.
+*/
+.product-card {
+  min-height: 310px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background-color: #ffffff;
+  border: 1px solid #b8c5ad;
+  border-radius: 8px;
+}
+
+/*
+  Placeholder product image box.
+  This keeps the card layout close to the wireframe before real
+  product images are added.
+*/
+.product-image {
+  min-height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #588157;
+  background-color: #eef2e8;
+  border: 2px solid #a3b18a;
+  border-radius: 6px;
+  font-weight: 700;
+}
+
+.product-card h3 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.product-card p {
+  margin: 0;
+}
+
+/*
+  margin-top: auto pushes the price to the bottom of the card.
+  This helps all cards look more even when descriptions have
+  different lengths.
+*/
+.price {
+  margin-top: auto;
+  color: #3a5a40;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+/*
+  Footer:
+  The wireframe shows copyright text on the left and the design
+  document link on the right.
+*/
+.site-footer {
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 24px 16px;
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  background-color: #ffffff;
+}
+
+.site-footer p {
+  margin: 0;
+}
+
+/*
+  Tablet layout:
+  Three product columns gives the cards more room on medium screens.
+*/
+@media (max-width: 900px) {
+  .brand h1 {
+    font-size: 38px;
+  }
+
+  .hero h2 {
+    font-size: 40px;
+  }
+
+  .product-grid {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+/*
+  Phone layout:
+  The mobile wireframe still shows three cards across, so the grid
+  stays at three columns. The text and spacing become smaller.
+*/
+@media (max-width: 640px) {
+  .site-header {
+    padding: 12px;
+  }
+
+  .brand {
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .brand-logo {
+    width: 56px;
+    height: 56px;
+  }
+
+  .brand h1 {
+    font-size: 32px;
+  }
+
+  .tagline {
+    font-size: 16px;
+  }
+
+  .hero {
+    min-height: 170px;
+    padding: 20px;
+  }
+
+  .hero h2 {
+    font-size: 30px;
+  }
+
+  .product-section {
+    padding: 28px 12px;
+  }
+
+  .product-section h2 {
+    font-size: 28px;
+  }
+
+  .product-grid {
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+  }
+
+  .product-card {
+    min-height: 240px;
+    padding: 10px;
+    gap: 8px;
+  }
+
+  .product-image {
+    min-height: 75px;
+    font-size: 14px;
+  }
+
+  .product-card h3 {
+    font-size: 15px;
+  }
+
+  .product-card p {
+    font-size: 13px;
+  }
+
+  .price {
+    font-size: 16px;
+  }
+
+  .site-footer {
+    flex-direction: column;
+  }
+}
+
+/*
+  Very small phone layout:
+  If the screen gets too narrow, two columns prevent the card text
+  from becoming cramped.
+*/
+@media (max-width: 420px) {
+  .product-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}

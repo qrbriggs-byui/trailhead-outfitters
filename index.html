@@ -2,12 +2,143 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>trailhead-outfitters</title>
+    <title>Trailhead Outfitters</title>
+    <link rel="stylesheet" href="./styles/index.css" />
   </head>
+
   <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.js"></script>
+    <!--
+      Page Header
+      This area introduces the store and matches the top of the wireframe.
+    -->
+    <header class="site-header">
+      <div class="brand">
+        <img
+          class="brand-logo"
+          src="src/assets/trailhead-outfitters-logo.jpg"
+          alt="Trailhead Outfitters logo"
+        />
+
+        <div>
+          <h1>Trailhead Outfitters</h1>
+          <p class="tagline">Your one stop shop for outdoor fun</p>
+        </div>
+      </div>
+    </header>
+
+    <!--
+      Main Content
+      The main element should contain the unique content for this page.
+    -->
+    <main>
+      <!--
+        Hero Section
+        This is the large image area shown below the header in the wireframe.
+      -->
+      <section class="hero" aria-labelledby="hero-heading">
+        <h2 id="hero-heading">Gear up for your next trail adventure</h2>
+      </section>
+
+      <!--
+        Featured Products Section
+        These cards are sample content for the first product row.
+      -->
+      <section class="product-section" aria-labelledby="featured-products">
+        <h2 id="featured-products">Featured Products</h2>
+
+        <div class="product-grid">
+          <article class="product-card">
+            <div class="product-image">Image</div>
+            <h3>Trail Tent</h3>
+            <p>Lightweight shelter for weekend camping.</p>
+            <p class="price">$79.00</p>
+          </article>
+
+          <article class="product-card">
+            <div class="product-image">Image</div>
+            <h3>Camp Mug</h3>
+            <p>Durable mug for warm drinks outdoors.</p>
+            <p class="price">$10.00</p>
+          </article>
+
+          <article class="product-card">
+            <div class="product-image">Image</div>
+            <h3>Day Pack</h3>
+            <p>Comfortable storage for short hikes.</p>
+            <p class="price">$20.00</p>
+          </article>
+
+          <article class="product-card">
+            <div class="product-image">Image</div>
+            <h3>Rain Jacket</h3>
+            <p>Water-resistant layer for changing weather.</p>
+            <p class="price">$100.00</p>
+          </article>
+
+          <article class="product-card">
+            <div class="product-image">Image</div>
+            <h3>Hiking Boots</h3>
+            <p>Supportive footwear for rocky trails.</p>
+            <p class="price">$150.00</p>
+          </article>
+        </div>
+      </section>
+
+      <!--
+        All Products Section
+        These cards are also sample content. Later, this section can be
+        filled with all products from products.json.
+      -->
+      <section class="product-section" aria-labelledby="all-products">
+        <h2 id="all-products">All Products</h2>
+
+        <div class="product-grid">
+          <article class="product-card">
+            <div class="product-image">Image</div>
+            <h3>Camp Stove</h3>
+            <p>Compact stove for trail meals.</p>
+            <p class="price">$10.00</p>
+          </article>
+
+          <article class="product-card">
+            <div class="product-image">Image</div>
+            <h3>Water Bottle</h3>
+            <p>Reusable bottle with a leak-proof lid.</p>
+            <p class="price">$20.00</p>
+          </article>
+
+          <article class="product-card">
+            <div class="product-image">Image</div>
+            <h3>Headlamp</h3>
+            <p>Hands-free lighting for camp nights.</p>
+            <p class="price">$30.00</p>
+          </article>
+
+          <article class="product-card">
+            <div class="product-image">Image</div>
+            <h3>Sleeping Bag</h3>
+            <p>Warm sleeping gear for cool evenings.</p>
+            <p class="price">$50.00</p>
+          </article>
+
+          <article class="product-card">
+            <div class="product-image">Image</div>
+            <h3>Trekking Poles</h3>
+            <p>Extra balance for long trail days.</p>
+            <p class="price">$100.00</p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <!--
+      Page Footer
+      The design document link stays available for grading and review.
+    -->
+    <footer class="site-footer">
+      <p>&copy; 2026 WDD 231 - Quinn Briggs</p>
+      <p><a href="./design-documents.html">Design Docs</a></p>
+    </footer>
   </body>
 </html>
